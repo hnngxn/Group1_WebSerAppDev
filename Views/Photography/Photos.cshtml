@@ -1,0 +1,28 @@
+﻿@model List<Group1_WebSerAppDev.Models.Photo>
+@{
+    ViewData["Title"] = "My Photos";
+}
+
+<h1 class="my-4">My Photos</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Camera</th>
+            <th>Date Taken</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Title</td>
+                <td>@p.Location</td>
+                <td>@p.Camera</td>
+                <td>@p.DateTaken.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
