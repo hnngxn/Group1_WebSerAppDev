@@ -30,12 +30,16 @@ namespace Group1_WebSerAppDev.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Camera")
+                    b.Property<DateTime>("DateTaken")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateTaken")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ImageFile")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
                         .IsRequired()
@@ -53,26 +57,110 @@ namespace Group1_WebSerAppDev.Migrations
                         new
                         {
                             Id = 1,
-                            Camera = "[camera]",
-                            DateTaken = new DateTime(2026, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Location = "[place]",
-                            Title = "[title]"
+                            DateTaken = new DateTime(2025, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Driving under the sunset with my best friend",
+                            ImageFile = "SunsetDrive.jpg",
+                            Location = "Bel Air, MD",
+                            Title = "Sunset Drive"
                         },
                         new
                         {
                             Id = 2,
-                            Camera = "[camera]",
-                            DateTaken = new DateTime(2026, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Location = "[place]",
-                            Title = "[title]"
+                            DateTaken = new DateTime(2026, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "He bought me flowers ",
+                            ImageFile = "Tulips.jpg",
+                            Location = "Vietnam",
+                            Title = "Tulips"
                         },
                         new
                         {
                             Id = 3,
-                            Camera = "[camera]",
-                            DateTaken = new DateTime(2026, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Location = "[place]",
-                            Title = "[title]"
+                            DateTaken = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Sleepy owl",
+                            ImageFile = "Owl.jpg",
+                            Location = "Hershey Park",
+                            Title = "Owl"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DateTaken = new DateTime(2025, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "First fall at UC",
+                            ImageFile = "Fall.jpg",
+                            Location = "UC",
+                            Title = "Fall Season in Cincy"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DateTaken = new DateTime(2026, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "My two good boys back home",
+                            ImageFile = "Dogs.jpg",
+                            Location = "Home",
+                            Title = "Two little cuties"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DateTaken = new DateTime(2026, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Lovebirds - they said",
+                            ImageFile = "Birds.jpg",
+                            Location = "Cincinnati Zoo",
+                            Title = "Love Birds"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DateTaken = new DateTime(2026, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "The summer he came",
+                            ImageFile = "BlurrySummer.jpg",
+                            Location = "Cincinnati, OH",
+                            Title = "Him"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DateTaken = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "A kid lost in the blue light at the museum",
+                            ImageFile = "Child.jpg",
+                            Location = "Hershey Park",
+                            Title = "Child"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DateTaken = new DateTime(2025, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "UC through my lens",
+                            ImageFile = "UC.jpg",
+                            Location = "Cincinnati, OH",
+                            Title = "UC"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DateTaken = new DateTime(2026, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "First time at this zoo with my boyfriend",
+                            ImageFile = "Zoo.jpg",
+                            Location = "Cincinnati Zoo",
+                            Title = "Zoo"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            DateTaken = new DateTime(2026, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Vacation that I grew up with",
+                            ImageFile = "Motobike.jpg",
+                            Location = "Vũng Tàu, Vietnam",
+                            Title = "Motorbike"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            DateTaken = new DateTime(2025, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Trip to DC with mom and dad",
+                            ImageFile = "McDonnal.jpg",
+                            Location = "Washington, DC",
+                            Title = "McDonald's Through the Frame"
                         });
                 });
 #pragma warning restore 612, 618

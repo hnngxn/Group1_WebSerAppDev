@@ -1,26 +1,28 @@
 ﻿@model List<Group1_WebSerAppDev.Models.Photo>
 @{
-    ViewData["Title"] = "My Photos";
+    ViewData["Title"] = "Photo Log";
 }
 
-<h1 class="my-4">My Photos</h1>
+<h1 class="my-4">Photo Log</h1>
 
-<table class="table table-striped">
+<table class="table table-striped align-middle">
     <thead>
         <tr>
+            <th></th>
             <th>Title</th>
             <th>Location</th>
-            <th>Camera</th>
-            <th>Date Taken</th>
+            <th>Memory</th>
+            <th>Date</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var p in Model)
         {
             <tr>
+                <td><img src="/images/photography/@p.ImageFile" style="width:80px; height:55px; object-fit:cover;" class="rounded" alt="@p.Title"></td>
                 <td>@p.Title</td>
                 <td>@p.Location</td>
-                <td>@p.Camera</td>
+                <td>@p.Description</td>
                 <td>@p.DateTaken.ToShortDateString()</td>
             </tr>
         }
