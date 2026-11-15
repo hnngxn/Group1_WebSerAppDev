@@ -22,6 +22,143 @@ namespace Group1_WebSerAppDev.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Group1_WebSerAppDev.Models.CardioActivity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Equipment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("JointImpact")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Met")
+                        .HasColumnType("float");
+
+                    b.Property<string>("MusclesWorked")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pace")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CardioActivities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Equipment = "Skates, helmet, pads",
+                            JointImpact = 0,
+                            Met = 7.5,
+                            MusclesWorked = "Glutes, quads, hip abductors, core",
+                            Name = "Rollerblading",
+                            Pace = "9 mph, recreational"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Equipment = "Skates, helmet, pads",
+                            JointImpact = 0,
+                            Met = 9.8000000000000007,
+                            MusclesWorked = "Glutes, quads, hip abductors, core",
+                            Name = "Rollerblading",
+                            Pace = "11 mph, moderate"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Equipment = "Running shoes",
+                            JointImpact = 2,
+                            Met = 8.3000000000000007,
+                            MusclesWorked = "Quads, hamstrings, calves",
+                            Name = "Running",
+                            Pace = "5 mph (12 min/mile)"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Equipment = "Running shoes",
+                            JointImpact = 2,
+                            Met = 9.8000000000000007,
+                            MusclesWorked = "Quads, hamstrings, calves",
+                            Name = "Running",
+                            Pace = "6 mph (10 min/mile)"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Equipment = "Bike, helmet",
+                            JointImpact = 0,
+                            Met = 8.0,
+                            MusclesWorked = "Quads, glutes, calves",
+                            Name = "Cycling",
+                            Pace = "12-13.9 mph, moderate"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Equipment = "Walking shoes",
+                            JointImpact = 0,
+                            Met = 4.2999999999999998,
+                            MusclesWorked = "Calves, hamstrings, glutes",
+                            Name = "Walking",
+                            Pace = "3.5 mph, brisk"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Equipment = "Pool access, goggles",
+                            JointImpact = 0,
+                            Met = 5.7999999999999998,
+                            MusclesWorked = "Shoulders, back, core, legs",
+                            Name = "Swimming",
+                            Pace = "Freestyle laps, light to moderate"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Equipment = "Rowing machine",
+                            JointImpact = 0,
+                            Met = 7.0,
+                            MusclesWorked = "Back, legs, arms, core",
+                            Name = "Rowing machine",
+                            Pace = "100 watts, moderate"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Equipment = "Elliptical trainer",
+                            JointImpact = 0,
+                            Met = 5.0,
+                            MusclesWorked = "Quads, glutes, hamstrings",
+                            Name = "Elliptical",
+                            Pace = "Moderate effort"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Equipment = "Jump rope",
+                            JointImpact = 2,
+                            Met = 11.800000000000001,
+                            MusclesWorked = "Calves, shoulders, core",
+                            Name = "Jump rope",
+                            Pace = "100-120 skips/min"
+                        });
+                });
+
             modelBuilder.Entity("Group1_WebSerAppDev.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
