@@ -1,0 +1,84 @@
+@using Group1_WebSerAppDev.Models
+@model List<CardioActivity>
+@{
+    ViewData["Title"] = "Cardio Comparison";
+    const int defaultWeightLb = 155;
+    const double kgPerLb = 0.45359237;
+}
+
+<h1 class="my-4">Cardio Comparison</h1>
+<p class="text-muted" style="max-width: 750px;">
+    How rollerblading compares with other common cardio. A MET is the energy an activity
+    costs relative to sitting still, and calories per hour is roughly MET &times; body weight in kilograms.
+</p>
+
+<div class="row g-2 align-items-center mb-3">
+    <div class="col-auto">
+        <label for="weight" class="col-form-label">Your weight (lb)</label>
+    </div>
+    <div class="col-auto">
+        <input type="number" id="weight" class="form-control" value="@defaultWeightLb" min="50" max="500" step="1" style="width: 110px;">
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Pace</th>
+                <th class="text-end">MET</th>
+                <th class="text-end">Calories / hour</th>
+                <th>Joint impact</th>
+                <th>Muscles worked</th>
+                <th>Equipment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var a in Model)
+            {
+                var isSkating = a.Name == "Rollerblading";
+                var badge = a.JointImpact switch
+                {
+                    ImpactLevel.Low => "bg-success",
+                    ImpactLevel.Moderate => "bg-warning text-dark",
+                    _ => "bg-danger"
+                };
+                <tr class="@(isSkating ? "table-primary" : "")">
+                    <td class="@(isSkating ? "fw-bold" : "")">@a.Name</td>
+                    <td>@a.Pace</td>
+                    <td class="text-end">@a.Met.ToString("0.0")</td>
+                    <td class="text-end calories" data-met="@a.Met.ToString(System.Globalization.CultureInfo.InvariantCulture)">@Math.Round(a.Met * defaultWeightLb * kgPerLb)</td>
+                    <td><span class="badge @badge">@a.JointImpact</span></td>
+                    <td>@a.MusclesWorked</td>
+                    <td>@a.Equipment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<p class="small text-muted">
+    MET values are from the
+    <a href="https://doi.org/10.1249/MSS.0b013e31821ece12" target="_blank" rel="noopener">2011 Compendium of Physical Activities</a>. Calorie figures are estimates
+    and vary with fitness, terrain and technique.
+</p>
+
+<div class="mb-5">
+    <a asp-action="Index" class="btn btn-outline-dark">Back to Rollerblading</a>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            var kgPerLb = @kgPerLb.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            $('#weight').on('input', function () {
+                var lb = parseFloat(this.value);
+                if (!(lb > 0)) { return; }
+                $('.calories').each(function () {
+                    $(this).text(Math.round($(this).data('met') * lb * kgPerLb));
+                });
+            });
+        });
+    </script>
+}
