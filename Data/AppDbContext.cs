@@ -11,6 +11,7 @@ namespace Group1_WebSerAppDev.Data
 
         public DbSet<Photo> Photos { get; set; }
         public DbSet<CardioActivity> CardioActivities { get; set; }
+        public DbSet<ActivityPace> ActivityPaces { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,18 +30,29 @@ namespace Group1_WebSerAppDev.Data
     new Photo { Id = 12, Title = "McDonald's Through the Frame", Location = "Washington, DC", Description = "Trip to DC with mom and dad", DateTaken = new DateTime(2025, 1, 27), ImageFile = "Nguyen_Han_McDonalds.jpg" }
     );
 
-            // MET values are from the 2011 Compendium of Physical Activities.
             modelBuilder.Entity<CardioActivity>().HasData(
-                new CardioActivity { Id = 1, Name = "Rollerblading", Pace = "9 mph, recreational", Met = 7.5, JointImpact = ImpactLevel.Low, MusclesWorked = "Glutes, quads, hip abductors, core", Equipment = "Skates, helmet, pads" },
-                new CardioActivity { Id = 2, Name = "Rollerblading", Pace = "11 mph, moderate", Met = 9.8, JointImpact = ImpactLevel.Low, MusclesWorked = "Glutes, quads, hip abductors, core", Equipment = "Skates, helmet, pads" },
-                new CardioActivity { Id = 3, Name = "Running", Pace = "5 mph (12 min/mile)", Met = 8.3, JointImpact = ImpactLevel.High, MusclesWorked = "Quads, hamstrings, calves", Equipment = "Running shoes" },
-                new CardioActivity { Id = 4, Name = "Running", Pace = "6 mph (10 min/mile)", Met = 9.8, JointImpact = ImpactLevel.High, MusclesWorked = "Quads, hamstrings, calves", Equipment = "Running shoes" },
-                new CardioActivity { Id = 5, Name = "Cycling", Pace = "12-13.9 mph, moderate", Met = 8.0, JointImpact = ImpactLevel.Low, MusclesWorked = "Quads, glutes, calves", Equipment = "Bike, helmet" },
-                new CardioActivity { Id = 6, Name = "Walking", Pace = "3.5 mph, brisk", Met = 4.3, JointImpact = ImpactLevel.Low, MusclesWorked = "Calves, hamstrings, glutes", Equipment = "Walking shoes" },
-                new CardioActivity { Id = 7, Name = "Swimming", Pace = "Freestyle laps, light to moderate", Met = 5.8, JointImpact = ImpactLevel.Low, MusclesWorked = "Shoulders, back, core, legs", Equipment = "Pool access, goggles" },
-                new CardioActivity { Id = 8, Name = "Rowing machine", Pace = "100 watts, moderate", Met = 7.0, JointImpact = ImpactLevel.Low, MusclesWorked = "Back, legs, arms, core", Equipment = "Rowing machine" },
-                new CardioActivity { Id = 9, Name = "Elliptical", Pace = "Moderate effort", Met = 5.0, JointImpact = ImpactLevel.Low, MusclesWorked = "Quads, glutes, hamstrings", Equipment = "Elliptical trainer" },
-                new CardioActivity { Id = 10, Name = "Jump rope", Pace = "100-120 skips/min", Met = 11.8, JointImpact = ImpactLevel.High, MusclesWorked = "Calves, shoulders, core", Equipment = "Jump rope" }
+                new CardioActivity { Id = 1, Name = "Rollerblading", JointImpact = ImpactLevel.Low, MusclesWorked = "Glutes, quads, hip abductors, core", Equipment = "Skates, helmet, pads" },
+                new CardioActivity { Id = 2, Name = "Running", JointImpact = ImpactLevel.High, MusclesWorked = "Quads, hamstrings, calves", Equipment = "Running shoes" },
+                new CardioActivity { Id = 3, Name = "Cycling", JointImpact = ImpactLevel.Low, MusclesWorked = "Quads, glutes, calves", Equipment = "Bike, helmet" },
+                new CardioActivity { Id = 4, Name = "Walking", JointImpact = ImpactLevel.Low, MusclesWorked = "Calves, hamstrings, glutes", Equipment = "Walking shoes" },
+                new CardioActivity { Id = 5, Name = "Swimming", JointImpact = ImpactLevel.Low, MusclesWorked = "Shoulders, back, core, legs", Equipment = "Pool access, goggles" },
+                new CardioActivity { Id = 6, Name = "Rowing machine", JointImpact = ImpactLevel.Low, MusclesWorked = "Back, legs, arms, core", Equipment = "Rowing machine" },
+                new CardioActivity { Id = 7, Name = "Elliptical", JointImpact = ImpactLevel.Low, MusclesWorked = "Quads, glutes, hamstrings", Equipment = "Elliptical trainer" },
+                new CardioActivity { Id = 8, Name = "Jump rope", JointImpact = ImpactLevel.High, MusclesWorked = "Calves, shoulders, core", Equipment = "Jump rope" }
+            );
+
+            // MET values are from the 2011 Compendium of Physical Activities.
+            modelBuilder.Entity<ActivityPace>().HasData(
+                new ActivityPace { Id = 1, CardioActivityId = 1, Description = "9 mph, recreational", Met = 7.5 },
+                new ActivityPace { Id = 2, CardioActivityId = 1, Description = "11 mph, moderate", Met = 9.8 },
+                new ActivityPace { Id = 3, CardioActivityId = 2, Description = "5 mph (12 min/mile)", Met = 8.3 },
+                new ActivityPace { Id = 4, CardioActivityId = 2, Description = "6 mph (10 min/mile)", Met = 9.8 },
+                new ActivityPace { Id = 5, CardioActivityId = 3, Description = "12-13.9 mph, moderate", Met = 8.0 },
+                new ActivityPace { Id = 6, CardioActivityId = 4, Description = "3.5 mph, brisk", Met = 4.3 },
+                new ActivityPace { Id = 7, CardioActivityId = 5, Description = "Freestyle laps, light to moderate", Met = 5.8 },
+                new ActivityPace { Id = 8, CardioActivityId = 6, Description = "100 watts, moderate", Met = 7.0 },
+                new ActivityPace { Id = 9, CardioActivityId = 7, Description = "Moderate effort", Met = 5.0 },
+                new ActivityPace { Id = 10, CardioActivityId = 8, Description = "100-120 skips/min", Met = 11.8 }
             );
         }
     }

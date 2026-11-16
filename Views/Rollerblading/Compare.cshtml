@@ -1,5 +1,5 @@
 @using Group1_WebSerAppDev.Models
-@model List<CardioActivity>
+@model List<ActivityPace>
 @{
     ViewData["Title"] = "Cardio Comparison";
     const int defaultWeightLb = 155;
@@ -35,8 +35,9 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var a in Model)
+            @foreach (var p in Model)
             {
+                var a = p.CardioActivity;
                 var isSkating = a.Name == "Rollerblading";
                 var badge = a.JointImpact switch
                 {
@@ -46,9 +47,9 @@
                 };
                 <tr class="@(isSkating ? "table-primary" : "")">
                     <td class="@(isSkating ? "fw-bold" : "")">@a.Name</td>
-                    <td>@a.Pace</td>
-                    <td class="text-end">@a.Met.ToString("0.0")</td>
-                    <td class="text-end calories" data-met="@a.Met.ToString(System.Globalization.CultureInfo.InvariantCulture)">@Math.Round(a.Met * defaultWeightLb * kgPerLb)</td>
+                    <td>@p.Description</td>
+                    <td class="text-end">@p.Met.ToString("0.0")</td>
+                    <td class="text-end calories" data-met="@p.Met.ToString(System.Globalization.CultureInfo.InvariantCulture)">@Math.Round(p.Met * defaultWeightLb * kgPerLb)</td>
                     <td><span class="badge @badge">@a.JointImpact</span></td>
                     <td>@a.MusclesWorked</td>
                     <td>@a.Equipment</td>

@@ -1,5 +1,6 @@
 using Group1_WebSerAppDev.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Group1_WebSerAppDev.Controllers
 {
@@ -19,11 +20,12 @@ namespace Group1_WebSerAppDev.Controllers
 
         public IActionResult Compare()
         {
-            var activities = _context.CardioActivities
-                .OrderByDescending(a => a.Met)
-                .ThenBy(a => a.Name)
+            var paces = _context.ActivityPaces
+                .Include(p => p.CardioActivity)
+                .OrderByDescending(p => p.Met)
+                .ThenBy(p => p.CardioActivity.Name)
                 .ToList();
-            return View(activities); // database table page
+            return View(paces); // database table page
         }
     }
 }
