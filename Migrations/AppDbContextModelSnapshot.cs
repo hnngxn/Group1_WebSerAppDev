@@ -59,7 +59,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 1,
                             DateTaken = new DateTime(2025, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Driving under the sunset with my best friend",
-                            ImageFile = "SunsetDrive.jpg",
+                            ImageFile = "Nguyen_Han_SunsetDrive.jpg",
                             Location = "Bel Air, MD",
                             Title = "Sunset Drive"
                         },
@@ -68,7 +68,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 2,
                             DateTaken = new DateTime(2026, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "He bought me flowers ",
-                            ImageFile = "Tulips.jpg",
+                            ImageFile = "Nguyen_Han_Tulips.jpg",
                             Location = "Vietnam",
                             Title = "Tulips"
                         },
@@ -77,7 +77,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 3,
                             DateTaken = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sleepy owl",
-                            ImageFile = "Owl.jpg",
+                            ImageFile = "Nguyen_Han_Owl.jpg",
                             Location = "Hershey Park",
                             Title = "Owl"
                         },
@@ -86,7 +86,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 4,
                             DateTaken = new DateTime(2025, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "First fall at UC",
-                            ImageFile = "Fall.jpg",
+                            ImageFile = "Nguyen_Han_Fall.jpg",
                             Location = "UC",
                             Title = "Fall Season in Cincy"
                         },
@@ -95,7 +95,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 5,
                             DateTaken = new DateTime(2026, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "My two good boys back home",
-                            ImageFile = "Dogs.jpg",
+                            ImageFile = "Nguyen_Han_Dogs.jpg",
                             Location = "Home",
                             Title = "Two little cuties"
                         },
@@ -104,7 +104,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 6,
                             DateTaken = new DateTime(2026, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lovebirds - they said",
-                            ImageFile = "Birds.jpg",
+                            ImageFile = "Nguyen_Han_Birds.jpg",
                             Location = "Cincinnati Zoo",
                             Title = "Love Birds"
                         },
@@ -113,7 +113,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 7,
                             DateTaken = new DateTime(2026, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "The summer he came",
-                            ImageFile = "BlurrySummer.jpg",
+                            ImageFile = "Nguyen_Han_BlurrySummer.jpg",
                             Location = "Cincinnati, OH",
                             Title = "Him"
                         },
@@ -122,7 +122,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 8,
                             DateTaken = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A kid lost in the blue light at the museum",
-                            ImageFile = "Child.jpg",
+                            ImageFile = "Nguyen_Han_Child.jpg",
                             Location = "Hershey Park",
                             Title = "Child"
                         },
@@ -131,7 +131,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 9,
                             DateTaken = new DateTime(2025, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "UC through my lens",
-                            ImageFile = "UC.jpg",
+                            ImageFile = "Nguyen_Han_UC.jpg",
                             Location = "Cincinnati, OH",
                             Title = "UC"
                         },
@@ -140,7 +140,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 10,
                             DateTaken = new DateTime(2026, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "First time at this zoo with my boyfriend",
-                            ImageFile = "Zoo.jpg",
+                            ImageFile = "Nguyen_Han_Zoo.jpg",
                             Location = "Cincinnati Zoo",
                             Title = "Zoo"
                         },
@@ -149,8 +149,8 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 11,
                             DateTaken = new DateTime(2026, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Vacation that I grew up with",
-                            ImageFile = "Motobike.jpg",
-                            Location = "Vũng Tàu, Vietnam",
+                            ImageFile = "Nguyen_Han_Motorbike.jpg",
+                            Location = "Vung Tau, Vietnam",
                             Title = "Motorbike"
                         },
                         new
@@ -158,7 +158,7 @@ namespace Group1_WebSerAppDev.Migrations
                             Id = 12,
                             DateTaken = new DateTime(2025, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Trip to DC with mom and dad",
-                            ImageFile = "McDonnal.jpg",
+                            ImageFile = "Nguyen_Han_McDonalds.jpg",
                             Location = "Washington, DC",
                             Title = "McDonald's Through the Frame"
                         });
