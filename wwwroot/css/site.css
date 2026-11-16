@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}

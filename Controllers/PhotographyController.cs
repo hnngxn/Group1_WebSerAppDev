@@ -14,7 +14,8 @@ namespace Group1_WebSerAppDev.Controllers
 
         public IActionResult Index()
         {
-            return View(); // info/gallery page
+            var photos = _context.Photos.ToList();
+            return View(photos);
         }
 
         public IActionResult Photos()
