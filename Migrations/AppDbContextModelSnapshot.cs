@@ -22,6 +22,197 @@ namespace Group1_WebSerAppDev.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Group1_WebSerAppDev.Models.ActivityPace", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CardioActivityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Met")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CardioActivityId");
+
+                    b.ToTable("ActivityPaces");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CardioActivityId = 1,
+                            Description = "9 mph, recreational",
+                            Met = 7.5
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CardioActivityId = 1,
+                            Description = "11 mph, moderate",
+                            Met = 9.8000000000000007
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CardioActivityId = 2,
+                            Description = "5 mph (12 min/mile)",
+                            Met = 8.3000000000000007
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CardioActivityId = 2,
+                            Description = "6 mph (10 min/mile)",
+                            Met = 9.8000000000000007
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CardioActivityId = 3,
+                            Description = "12-13.9 mph, moderate",
+                            Met = 8.0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CardioActivityId = 4,
+                            Description = "3.5 mph, brisk",
+                            Met = 4.2999999999999998
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CardioActivityId = 5,
+                            Description = "Freestyle laps, light to moderate",
+                            Met = 5.7999999999999998
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CardioActivityId = 6,
+                            Description = "100 watts, moderate",
+                            Met = 7.0
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CardioActivityId = 7,
+                            Description = "Moderate effort",
+                            Met = 5.0
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CardioActivityId = 8,
+                            Description = "100-120 skips/min",
+                            Met = 11.800000000000001
+                        });
+                });
+
+            modelBuilder.Entity("Group1_WebSerAppDev.Models.CardioActivity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Equipment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("JointImpact")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MusclesWorked")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CardioActivities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Equipment = "Skates, helmet, pads",
+                            JointImpact = 0,
+                            MusclesWorked = "Glutes, quads, hip abductors, core",
+                            Name = "Rollerblading"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Equipment = "Running shoes",
+                            JointImpact = 2,
+                            MusclesWorked = "Quads, hamstrings, calves",
+                            Name = "Running"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Equipment = "Bike, helmet",
+                            JointImpact = 0,
+                            MusclesWorked = "Quads, glutes, calves",
+                            Name = "Cycling"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Equipment = "Walking shoes",
+                            JointImpact = 0,
+                            MusclesWorked = "Calves, hamstrings, glutes",
+                            Name = "Walking"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Equipment = "Pool access, goggles",
+                            JointImpact = 0,
+                            MusclesWorked = "Shoulders, back, core, legs",
+                            Name = "Swimming"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Equipment = "Rowing machine",
+                            JointImpact = 0,
+                            MusclesWorked = "Back, legs, arms, core",
+                            Name = "Rowing machine"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Equipment = "Elliptical trainer",
+                            JointImpact = 0,
+                            MusclesWorked = "Quads, glutes, hamstrings",
+                            Name = "Elliptical"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Equipment = "Jump rope",
+                            JointImpact = 2,
+                            MusclesWorked = "Calves, shoulders, core",
+                            Name = "Jump rope"
+                        });
+                });
+
             modelBuilder.Entity("Group1_WebSerAppDev.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
@@ -162,6 +353,22 @@ namespace Group1_WebSerAppDev.Migrations
                             Location = "Washington, DC",
                             Title = "McDonald's Through the Frame"
                         });
+                });
+
+            modelBuilder.Entity("Group1_WebSerAppDev.Models.ActivityPace", b =>
+                {
+                    b.HasOne("Group1_WebSerAppDev.Models.CardioActivity", "CardioActivity")
+                        .WithMany("Paces")
+                        .HasForeignKey("CardioActivityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CardioActivity");
+                });
+
+            modelBuilder.Entity("Group1_WebSerAppDev.Models.CardioActivity", b =>
+                {
+                    b.Navigation("Paces");
                 });
 #pragma warning restore 612, 618
         }
