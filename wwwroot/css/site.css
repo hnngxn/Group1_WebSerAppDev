@@ -45,3 +45,115 @@ body {
         transform: none;
     }
 }
+/* ===== Team Hobbies palette ===== */
+:root {
+    --baby-blue-dark: #8cc3ec;
+    --espresso: #2b1d16;
+    --baby-blue: #a9d3f2;
+    --link-blue: #2a6496;
+    --yellow: #f6d55c;
+    --text: #1f1714;
+    --muted-on-dark: #cbbcb2;
+}
+
+body {
+    color: var(--text);
+}
+
+a {
+    color: var(--link-blue);
+}
+
+    a:hover {
+        color: var(--espresso);
+    }
+/* ===== Nav bar ===== */
+.site-nav {
+    background-color: var(--espresso);
+}
+
+    .site-nav .navbar-brand {
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    .site-nav .navbar-nav .nav-link {
+        color: var(--muted-on-dark);
+    }
+
+        .site-nav .navbar-nav .nav-link:hover {
+            color: #ffffff;
+        }
+        .site-nav .navbar-nav .nav-link.active {
+    color: #ffffff;
+    border-bottom: 2px solid var(--baby-blue);
+}
+        .site-nav .navbar-nav .nav-link.active {
+    color: #ffffff;
+    border-bottom: 2px solid var(--baby-blue);
+}
+        .site-nav .navbar-nav .nav-link.active {
+            color: #ffffff;
+            border-bottom: 2px solid var(--baby-blue);
+        }
+/* ===== Footer ===== */
+.site-footer {
+    background-color: var(--espresso);
+    color: var(--muted-on-dark);
+}
+
+    .site-footer a {
+        color: var(--yellow);
+    }
+
+        .site-footer a:hover {
+            color: #ffffff;
+        }
+.site-nav .navbar-nav .nav-link.active {
+    color: #ffffff;
+    border-bottom: 2px solid var(--baby-blue);
+}
+/* ===== Buttons ===== */
+.btn-dark {
+    background-color: var(--baby-blue);
+    border-color: var(--baby-blue);
+    color: var(--espresso);
+    font-weight: 500;
+}
+
+    .btn-dark:hover,
+    .btn-dark:focus,
+    .btn-dark:active {
+        background-color: var(--baby-blue-dark);
+        border-color: var(--baby-blue-dark);
+        color: var(--espresso);
+    }
+
+/* outlined = go back */
+.btn-outline-dark {
+    color: var(--espresso);
+    border-color: var(--espresso);
+}
+
+    .btn-outline-dark:hover {
+        background-color: var(--espresso);
+        color: #ffffff;
+    }
+/* ===== Dark sections (like the home hero) ===== */
+.bg-dark {
+    background-color: var(--espresso) !important;
+}
+
+    /* buttons sitting on a dark background */
+    .bg-dark .btn-outline-light {
+        background-color: var(--baby-blue);
+        border-color: var(--baby-blue);
+        color: var(--espresso);
+        font-weight: 500;
+    }
+
+        .bg-dark .btn-outline-light:hover {
+            background-color: var(--baby-blue-dark);
+            border-color: var(--baby-blue-dark);
+            color: var(--espresso);
+        }
